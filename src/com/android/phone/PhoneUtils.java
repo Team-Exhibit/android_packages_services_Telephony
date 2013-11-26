@@ -2802,8 +2802,11 @@ public class PhoneUtils {
         PhoneGlobals app = PhoneGlobals.getInstance();
         AudioManager audioManager = (AudioManager) app.getSystemService(Context.AUDIO_SERVICE);
         // determine actual streamType
+        
+        final BluetoothManager btManager = app.getBluetoothManager();
+        
         int streamType = AudioManager.STREAM_VOICE_CALL;
-        if (app.isBluetoothHeadsetAudioOn()) {
+        if (btManager.isBluetoothHeadsetAudioOn()) {
             streamType = AudioManager.STREAM_BLUETOOTH_SCO;
         }
         // determine volume and 1 level lower volume (lowest level can be 0)
