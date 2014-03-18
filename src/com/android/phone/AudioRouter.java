@@ -350,10 +350,6 @@ import java.util.List;
         if (doNotify) {
             notifyListeners();
         }
-        
-        // Fix for low in-call volume bug.
-        // Reset the audio volume stream after switching audio mode
-        PhoneUtils.resetAudioStreamVolume();
     }
 
     /**
