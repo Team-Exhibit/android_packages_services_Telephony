@@ -64,7 +64,7 @@ import android.widget.ToggleButton;
  */
 public class OtaUtils {
     private static final String LOG_TAG = "OtaUtils";
-    private static final boolean DBG = false;
+    private static final boolean DBG = true;
 
     public static final int OTA_SHOW_ACTIVATION_SCREEN_OFF = 0;
     public static final int OTA_SHOW_ACTIVATION_SCREEN_ON = 1;
@@ -1010,11 +1010,12 @@ public class OtaUtils {
      * When SPC notice times out, force phone to power down.
      */
     public void onOtaCloseSpcNotice() {
+	//TODO: DON'T EVER... EVER DO THIS!!!
         if (DBG) log("onOtaCloseSpcNotice(), send shutdown intent");
-        Intent shutdown = new Intent(Intent.ACTION_REQUEST_SHUTDOWN);
-        shutdown.putExtra(Intent.EXTRA_KEY_CONFIRM, false);
-        shutdown.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        mContext.startActivity(shutdown);
+        //Intent shutdown = new Intent(Intent.ACTION_REQUEST_SHUTDOWN);
+        //shutdown.putExtra(Intent.EXTRA_KEY_CONFIRM, false);
+        //shutdown.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //mContext.startActivity(shutdown);
     }
 
     /**
